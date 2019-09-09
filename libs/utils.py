@@ -78,11 +78,12 @@ def fmtShortcut(text):
 
 
 def generateColorByText(text):
+    text = text.lower()     #Chien.dotruong modify: fix wrong label by labeler.
     s = ustr(text)
     hashCode = int(hashlib.sha256(s.encode('utf-8')).hexdigest(), 16)
-    r = int((hashCode / 255) % 255)
-    g = int((hashCode / 65025)  % 255)
-    b = int((hashCode / 16581375)  % 255)
+    r = int((hashCode / 5) % 255)   #Chien.dotruong modify
+    g = int((hashCode / 30)  % 255)
+    b = int((hashCode / 300)  % 255)
     return QColor(r, g, b, 100)
 
 def have_qstring():
