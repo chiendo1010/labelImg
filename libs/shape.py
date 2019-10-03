@@ -19,8 +19,9 @@ DEFAULT_SELECT_FILL_COLOR = QColor(0, 128, 255, 155)
 DEFAULT_VERTEX_FILL_COLOR = QColor(0, 255, 0, 255)
 DEFAULT_HVERTEX_FILL_COLOR = QColor(255, 0, 0)
 MIN_Y_LABEL = 10
-FONT_SIZE_LABEL = 15
 COLOR_LABEL = QColor(255,0,0)
+FONT_SIZE_LABEL = 15
+LINE_WIDTH = 5
 
 
 class Shape(object):
@@ -91,7 +92,7 @@ class Shape(object):
             color = self.select_line_color if self.selected else self.line_color
             pen = QPen(color)
             # Try using integer sizes for smoother drawing(?)
-            pen.setWidth(max(5, int(round(2.0 / self.scale))))      
+            pen.setWidth(max(LINE_WIDTH, int(round(2.0 / self.scale))))
             painter.setPen(pen)
 
             line_path = QPainterPath()

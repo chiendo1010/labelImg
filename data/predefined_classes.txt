@@ -1,4 +1,4 @@
-car
-truck
-bus
-motorbike
+xe_hoi
+xe_may
+xe_tai
+xe_buyt
