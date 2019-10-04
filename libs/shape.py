@@ -89,8 +89,12 @@ class Shape(object):
 
     def paint(self, painter):
         if self.points:
-            color = self.select_line_color if self.selected else self.line_color
-            pen = QPen(color)
+            # color = self.select_line_color if self.selected else self.line_color
+            if self.selected:
+                color = self.select_line_color
+            else:
+                color = self.line_color
+            pen = QPen(DEFAULT_LINE_COLOR)
             # Try using integer sizes for smoother drawing(?)
             pen.setWidth(max(LINE_WIDTH, int(round(2.0 / self.scale))))
             painter.setPen(pen)
